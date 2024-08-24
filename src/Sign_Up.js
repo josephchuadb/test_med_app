@@ -57,8 +57,11 @@ const SignUp = () => {
                 <h1>Sign Up</h1>
             </div>
             <div className="signup-text1" style={{textAlign: "left"}}>
-                Already a member? <span>
-                    <a href="../Login/Login.html" style={{color: "#2190FF"}}> Login</a></span>
+                Already a member? 
+                <span>
+                    <Link to="../Login.html" style={{color: "#2190FF"}}> Login
+                    </Link>
+                </span>
             </div>
             <div className="signup-form">
                 <form method="POST" onSubmit={register}>

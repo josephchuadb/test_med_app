@@ -1,9 +1,49 @@
-import React from "react"; // Importing the necessary modules from React library
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importing the Link component from react-router-dom library
 import './Navbar.css';
 
 // Function component for the main App
 const Navbar = () => {
+    const [click, setClick] = useState(false);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [username, setUsername] = useState("");
+    const[email,setEmail]=useState("");
+    const [showDropdown, setShowDropdown] = useState(false);
+    const handleClick = () => setClick(!click);
+
+    const handleLogout = () => {
+        sessionStorage.removeItem("auth-token");
+        sessionStorage.removeItem("name");
+        sessionStorage.removeItem("email");
+        sessionStorage.removeItem("phone");
+        // remove email phone
+        localStorage.removeItem("doctorData");
+        setIsLoggedIn(false);
+        // setUsername("");
+       
+        // Remove the reviewFormData from local storage
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.startsWith("reviewFormData_")) {
+            localStorage.removeItem(key);
+          }
+        }
+        setEmail('');
+        window.location.reload();
+    }
+    const handleDropdown = () => {
+      setShowDropdown(!showDropdown);
+    }
+    useEffect(() => { 
+      const storedemail = sessionStorage.getItem("email");
+
+      if (storedemail) {
+            setIsLoggedIn(true);
+            setUsername(storedemail);
+          }
+        }, []);
+
     return (
         <div>
             <nav>
@@ -23,27 +63,41 @@ const Navbar = () => {
                 </a>
                 <span>.</span>
                 </div>
-                <div className="nav__icon">
-                <i className="fa fa-times fa fa-bars"></i>
+                <div className="nav__icon" onClick={handleClick}>
+                <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
                 </div>
 
-                <ul className="nav__links active">
+                <ul className={click ? 'nav__links active' : 'nav__links'}>
                 <li className="link">
                     <Link to="/">Home</Link>
                 </li>
                 <li className="link">
-                    <a href="#">Appointments</a>
+                    <Link to="/search/doctors">Appointments</Link>
+                </li>
+                {isLoggedIn?(
+                <>
+                <li className="link">
+                <Link to="/"></Link>
+                Welcome, {isLoggedIn}
+                <button className="btn2" onClick={handleLogout}>
+                    Logout
+                </button>
+                </li>
+                </>
+                ) : (
+                <>
+                <li className="link">
+                <Link to="../Sign_Up.html">
+                    <button className="btn1">Sign Up</button>
+                </Link>
                 </li>
                 <li className="link">
-                    <Link to="../Sign_Up.html">
-                        <button className="btn1">Sign Up</button>
-                    </Link>
-                </li>
-                <li className="link">
-                    <Link to="../Login.html">
+                <Link to="../Login.html">
                     <button className="btn1">Login</button>
-                    </Link>
+                </Link>
                 </li>
+                </>
+        )}
                 </ul>
             </nav>
         </div>
