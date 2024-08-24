@@ -64,12 +64,23 @@ const SignUp = () => {
                 <form method="POST" onSubmit={register}>
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" required className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
+                        <input value={name} 
+                        type="text" 
+                        onChange={(e) => setName(e.target.value)} name="name" id="name" required 
+                        className="form-control" 
+                        placeholder="Enter your name" aria-describedby="helpId" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="phone">Phone</label>
-                        <input value={phone} type="tel" onChange={(e) => setPhone(e.target.value)} name="phone" id="phone" title="Only accepts 10 digits for this phone number." required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" pattern="[1-9]{1}[0-9]{9}" />
+                        <input value={phone} 
+                        type="tel" 
+                        onChange={(e) => setPhone(e.target.value)} 
+                        name="phone" 
+                        id="phone" 
+                        title="Only accepts 10 digits for this phone number." required className="form-control" 
+                        placeholder="Enter your phone number" aria-describedby="helpId" 
+                        pattern="[1-9]{1}[0-9]{9}" />
                     </div>
 
                     <div className="form-group">
@@ -80,7 +91,15 @@ const SignUp = () => {
 
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input value={password} type="password" onChange={(e) => setPassword(e.target.value)} name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                        <input 
+                        value={password}
+                        type="password"
+                        onChange={(e) => setPassword(e.target.value)} name="password"
+                        id="password"
+                        required className="form-control"
+                        placeholder="Enter your password" 
+                        autoComplete="on"
+                        aria-describedby="helpId" />
                     </div>
 
                     <div className="btn-group">
