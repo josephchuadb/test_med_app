@@ -1,14 +1,15 @@
 // Import necessary modules from React library
-import React, { useEffect } from 'react';
+import React from 'react';
+// import React, { useEffect } from 'react';
 
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Import custom Navbar component
-import Navbar from './Components/Navbar/Navbar';
 import LandingPage from './Components/Landing_Page/Landing_Page';
-import Login from './Components/Login/Login';
-import SignUp from './Components/Sign_Up/Sign_Up';
+import Navbar from './Components/Navbar/Navbar';
+import Login from './Login';
+import SignUp from './Sign_Up';
 import './App.css';
 
 // Function component for the main App
@@ -24,8 +25,8 @@ function App() {
           <Routes>
             {/* Define individual Route components for different pages */}
             <Route path="/" element={<LandingPage/>}/>
-            <Route path="/" element={<Login/>}/>
-            <Route path="/" element={<SignUp/>}/>
+            <Route path="/Login.html" element={<Login/>}/>
+            <Route path="/Sign_Up.html" element={<SignUp/>}/>
           </Routes>
         </BrowserRouter>
     </div>

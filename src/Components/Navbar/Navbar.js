@@ -1,10 +1,11 @@
+import React from "react"; // Importing the necessary modules from React library
+import { Link } from "react-router-dom"; // Importing the Link component from react-router-dom library
 import './Navbar.css';
 
 // Function component for the main App
-function Navbar() {
+const Navbar = () => {
     return (
         <div>
-            <body>
             <nav>
                 <div className="nav__logo">
                 <a href="/">
@@ -28,24 +29,23 @@ function Navbar() {
 
                 <ul className="nav__links active">
                 <li className="link">
-                    <a href="../Landing_Page/LandingPage.html">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className="link">
                     <a href="#">Appointments</a>
                 </li>
                 <li className="link">
-                    <a href="../Sign_Up//Sign_Up.html">
-                    <button className="btn1">Sign Up</button>
-                    </a>
+                    <Link to="../Sign_Up.html">
+                        <button className="btn1">Sign Up</button>
+                    </Link>
                 </li>
                 <li className="link">
-                    <a href="../Login/Login.html">
+                    <Link to="../Login.html">
                     <button className="btn1">Login</button>
-                    </a>
+                    </Link>
                 </li>
                 </ul>
             </nav>
-            </body>
         </div>
     );
 }
