@@ -12,6 +12,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Login/Login';
 import SignUp from './Components/Sign_Up/Sign_Up';
 import BookingConsultation from './Components/BookingConsultation';
+import Notification from './Components/Notification/Notification';
 import './App.css';
 
 // Function component for the main App
@@ -21,17 +22,17 @@ function App() {
     <div className="App">
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
-          {/* Display the Navbar component */}
-          <Navbar/>
-          {/* Set up the Routes for different pages */}
-          <Routes>
-            {/* Define individual Route components for different pages */}
-            <Route path="/" element={<LandingPage/>}/>
-            <Route path="/Login/Login" element={<Login/>}/>
-            <Route path="/Sign_Up/Sign_Up" element={<SignUp/>}/>
-            <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
-            {/* <Route path="/FindDoctorSearch/FindDoctorSearch" element={<FindDoctorSearch/>}/> */}
-          </Routes>
+            <Notification>
+            <Navbar/>
+            <Routes>
+                {/* Define individual Route components for different pages */}
+                <Route path="/" element={<LandingPage/>}/>
+                <Route path="/Login/Login" element={<Login/>}/>
+                <Route path="/Sign_Up/Sign_Up" element={<SignUp/>}/>
+                <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
+                <Route path="/Notification/Notification" element={<Notification/>}/>
+            </Routes>
+            </Notification>
         </BrowserRouter>
     </div>
   );
