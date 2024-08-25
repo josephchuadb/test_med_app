@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './InstantConsultation.css';
+import './BookingConsultation.css';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import FindDoctorSearch from '../FindDoctorSearch/FindDoctorSearch';
-import DoctorCard from '../DoctorCard/DoctorCard';
+import FindDoctorSearch from '../Components/FindDoctorSearch/FindDoctorSearch';
+import DoctorCard from '../Components/DoctorCard/DoctorCard';
 
-const InstantConsultation = () => {
+const BookingConsultation = () => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -21,7 +21,7 @@ const InstantConsultation = () => {
                 setFilteredDoctors(filtered);
                 
                 setIsSearched(true);
-                window.reload()
+                // location.reload();
             } else {
                 setFilteredDoctors([]);
                 setIsSearched(false);
@@ -82,4 +82,4 @@ const InstantConsultation = () => {
     )
 }
 
-export default InstantConsultation;
+export default BookingConsultation;
