@@ -48,7 +48,7 @@ const Navbar = () => {
         <div>
             <nav>
                 <div className="nav__logo">
-                <a href="/">
+                <a href="/Landing_Page/Landing_Page">
                     StayHealthy 
                     <svg xmlns="http://www.w3.org/2000/svg" height="26" width="26" viewBox="0 0 1000 1000" style={{fill:"#3685fb"}}>
                         <title>Doctor With Stethoscope SVG icon</title>
@@ -69,16 +69,16 @@ const Navbar = () => {
 
                 <ul className={click ? 'nav__links active' : 'nav__links'}>
                 <li className="link">
-                    <Link to="/">Home</Link>
+                    <Link to="/Landing_Page/Landing_Page">Home</Link>
                 </li>
                 <li className="link">
-                    <Link to="/search/doctors">Appointments</Link>
+                    <Link to="/FindDoctorSearch/FindDoctorSearch">Appointments</Link>
                 </li>
                 {isLoggedIn?(
                 <>
                 <li className="link">
                 <Link to="/"></Link>
-                Welcome, {isLoggedIn}
+                Welcome, {username}
                 <button className="btn2" onClick={handleLogout}>
                     Logout
                 </button>
@@ -87,17 +87,17 @@ const Navbar = () => {
                 ) : (
                 <>
                 <li className="link">
-                <Link to="../Sign_Up.html">
+                <Link to="/Sign_Up/Sign_Up">
                     <button className="btn1">Sign Up</button>
                 </Link>
                 </li>
                 <li className="link">
-                <Link to="../Login.html">
+                <Link to="/Login/Login">
                     <button className="btn1">Login</button>
                 </Link>
                 </li>
                 </>
-        )}
+                )}
                 </ul>
             </nav>
         </div>

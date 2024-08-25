@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react';
 // Apply CSS according to your design theme or the CSS provided in week 2 lab 2
 import { Link, useNavigate } from 'react-router-dom';
-import { API_URL } from './config';
+import { API_URL } from '../../config';
 import './Login.css';
-
 
 // Function component for the main App
 const Login = () => {
@@ -61,7 +60,10 @@ const Login = () => {
                     <h2>Login</h2>
                 </div>
                 <div className="login-text">
-                    Are you a new member? <span><a href="../Sign_Up.html" style={{color: "#2190FF"}}> Sign Up Here</a></span>
+                    Are you a new member?
+                    <span>
+                        <Link to="../Sign_Up.html" style={{color: "#2190FF"}}>Sign Up Here</Link>
+                    </span>
                 </div>
                 <br />
                 <div className="login-form">
