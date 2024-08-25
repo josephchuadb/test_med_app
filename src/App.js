@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 import SignUp from './Components/Sign_Up/Sign_Up';
 import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
 import './App.css';
 
 // Function component for the main App
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/Sign_Up/Sign_Up" element={<SignUp/>}/>
                 <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
                 <Route path="/Notification/Notification" element={<Notification/>}/>
+                <Route path="/ReviewForm/ReviewForm" element={<ReviewForm/>}/>
             </Routes>
             </Notification>
         </BrowserRouter>

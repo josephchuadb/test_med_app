@@ -1,0 +1,86 @@
+/* Styles for the container element */
+.container {
+    max-width: 900px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Add padding inside the container */
+    margin-top: 10%; /* Set top margin as a percentage of the viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Styles for the main signup text */
+.reviews-text {
+    margin-top: 30px; /* Add top margin */
+    grid-column: 1 / 4; /* Span across all three columns */
+    text-align: center; /* Center-align text */
+}
+
+/* Styles for the signup form section */
+.reviews-form {
+    grid-column: 2 / 4; /* Span from second to fourth column */
+}
+
+/* Styles for button group in the signup form */
+.btn-group {
+    margin-top: .0001px; /* Add a small top margin to button group */
+    margin-bottom: 20px; /* Add bottom margin to button group */
+}
+
+/* Styles for buttons in the signup form */
+.btn {
+    margin:0px;
+    padding: 10px 20px; /* Set padding for buttons */
+    font-size: 16px; /* Set font size for buttons */
+    border: none; /* Remove button borders */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styles for primary button in the signup form */
+.btn-primary {
+    background-color: #007bff; /* Set background color for primary button */
+    color: #fff; /* Set text color for primary button */
+}
+
+/* Styles for danger button in the signup form */
+.btn-danger {
+    background-color: #dc3545; /* Set background color for danger button */
+    color: #fff; /* Set text color for danger button */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 100px;
+  grid-auto-rows: 60px;
+  grid-gap: 15px;
+}
+
+/* Styles for the grid layout of the signup form */
+.reviews__gridtitle {
+    display: grid;
+    background-color: lightgray;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.reviews__gridlist {
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(5, 1fr);
+}
+  
+.col {
+    height: 50px;
+    font-size: 8px;
+    border-bottom: 1px solid gray;
+}
+
+.list {
+    height: 80px;
+    font-size: 8px;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+}
+
+.list__top {
+    margin-top: 25px;
+}

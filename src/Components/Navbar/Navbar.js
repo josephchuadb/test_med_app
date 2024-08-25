@@ -75,6 +75,10 @@ const Navbar = () => {
                     {/*  <Link to="/FindDoctorSearch/FindDoctorSearch">Appointments</Link> */}
                     <Link to="/BookingConsultation">Appointments</Link>
                 </li>
+                <li className="link">
+                    {/*  <Link to="/FindDoctorSearch/FindDoctorSearch">Appointments</Link> */}
+                    <Link to="/ReviewForm/ReviewForm">Reviews</Link>
+                </li>
                 {isLoggedIn?(
                 <>
                 <li className="link">
