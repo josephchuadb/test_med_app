@@ -48,7 +48,7 @@ const Navbar = () => {
         <div>
             <nav>
                 <div className="nav__logo">
-                <a href="/Landing_Page/Landing_Page">
+                <a href="/">
                     StayHealthy 
                     <svg xmlns="http://www.w3.org/2000/svg" height="26" width="26" viewBox="0 0 1000 1000" style={{fill:"#3685fb"}}>
                         <title>Doctor With Stethoscope SVG icon</title>
@@ -69,7 +69,7 @@ const Navbar = () => {
 
                 <ul className={click ? 'nav__links active' : 'nav__links'}>
                 <li className="link">
-                    <Link to="/Landing_Page/Landing_Page">Home</Link>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className="link">
                     <Link to="/FindDoctorSearch/FindDoctorSearch">Appointments</Link>
