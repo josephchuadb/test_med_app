@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ReviewForm.css'
-import { Link, useNavigate } from 'react-router-dom';
-import { API_URL } from '../../config';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import { Link, useNavigate } from 'react-router-dom';
+// import { API_URL } from '../../config';
 
 const ReviewForm = () => {
   return (    
@@ -34,9 +31,7 @@ const ReviewForm = () => {
                         <button className="btn">Click Here</button>
                     </h1>
                 </div>
-                <div className="list">
-                    <h1 className="list__top"></h1>
-                    </div>
+                <div className="list"></div>
                 <div className="list">
                     <h1 className="list__top">2</h1>
                     </div>
@@ -51,9 +46,7 @@ const ReviewForm = () => {
                         <button className="btn">Click Here</button>
                     </h1>
                 </div>
-                <div className="list">
-                    <h1 className="list__top"></h1>
-                </div>
+                <div className="list"></div>
             </div>
         </div>
   );
