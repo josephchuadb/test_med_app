@@ -86,6 +86,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                   <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
                   {appointments.map((appointment) => (
                     <div className="bookedInfo" key={appointment.id}>
+                      <p>Doctor: {name}</p>
+                      <p>Speciality: {speciality}</p>
                       <p>Name: {appointment.name}</p>
                       <p>Phone Number: {appointment.phoneNumber}</p>
                       <p>Date of Appointment: {appointment.dateAppointment}</p>

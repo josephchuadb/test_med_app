@@ -56,10 +56,11 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
           <select name="selectedSlot" id="selectedSlot" onChange={(e) => setSelectedSlot(e.target.value)} value={selectedSlot}
           required >
             <option>Select a time slot</option>
-            <option value="8am to 9am">8am to 9am</option>
-            <option value="9am to 10am">9am to 10am</option>
-            <option value="10am to 11am">10am to 11am</option>
-            <option value="11am to 12pm">11am to 12pm</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
         </select>
         </div>
         <button type="submit">Book Now</button>
