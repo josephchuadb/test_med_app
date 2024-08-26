@@ -79,6 +79,7 @@ const Navbar = () => {
                 <li className="link">
                     <Link to="/ReviewForm/ReviewForm">Reviews</Link>
                 </li>
+                {/*
                 <li className="link">
                     <ProfileCard />
                 </li>
@@ -87,7 +88,8 @@ const Navbar = () => {
                         Logout
                     </button>
                 </li>
-                {/*  
+                */}
+                
                 {isLoggedIn? (
                     <>
                         <li className="link">
@@ -110,7 +112,7 @@ const Navbar = () => {
                         </li>
                     </>
                 )}
-                */}
+                
                 </ul>
             </nav>
         </div>

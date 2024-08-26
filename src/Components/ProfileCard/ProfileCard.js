@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './ProfileCard.css'
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ const ProfileCard = () => {
               Welcome, Joseph
             </Dropdown.Toggle>
             <Dropdown.Menu style={{ marginTop: -2 }}>
-              <Dropdown.Item href="#" style={{ display: 'block', 
+              <Dropdown.Item href="/ProfileForm/ProfileForm" style={{ display: 'block', 
                   width: 200, textAlign: 'center', padding: 0 }}>
                 Your Profile
               </Dropdown.Item>

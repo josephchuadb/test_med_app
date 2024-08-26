@@ -47,6 +47,13 @@
     color: #fff; /* Set text color for danger button */
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import './ReviewForm.css'
+import './ReviewForm.css';
 // import { Link, useNavigate } from 'react-router-dom';
 // import { API_URL } from '../../config';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { FaStar } from 'react-icons/fa';
+import StarRatings from '../StarRatings/StarRatings';
 
 const ReviewForm = ({onSubmit}) => {
     const [name, setName] = useState('');
     const [review, setReview] = useState('');
+    const [value, setValue] = useState("");
+    const [star, setStar] = useState();
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         onSubmit({ name, review });
         setName('');
         setReview('');
+        setValue(review + " with " + star + " star ");
     };
 
     return (    
@@ -40,7 +45,7 @@ const ReviewForm = ({onSubmit}) => {
                         </div>
                     <div className="list">
                         <h1>
-                            <Popup trigger={<button className="btn">Click Here</button>} 
+                            <Popup trigger={<button className="btn" disabled >Click Here</button>} 
                             modal nested>
                             {close => (
                                 <div className='modal'>
@@ -69,14 +74,21 @@ const ReviewForm = ({onSubmit}) => {
                                                 required >
                                             </textarea>
                                         </div>
+                                        <div className="form-group">
+                                            <label htmlFor="name">Rating:</label>
+                                            <StarRatings setStar= {setStar} />
+                                        </div>
                                         <button onClick={() => close()}>Submit</button>
+                                        <div>{value}</div>
                                     </form>
                                 </div>
                             )}
                             </Popup>
                         </h1>
                     </div>
-                    <div className="list"></div>
+                    <div className="list">
+                        <h1 className="list__top">Reviewed</h1>
+                    </div>
                     <div className="list">
                         <h1 className="list__top">2</h1>
                         </div>
@@ -116,6 +128,10 @@ const ReviewForm = ({onSubmit}) => {
                                                 onChange={(e) => setReview(e.target.value)}
                                                 required >
                                             </textarea>
+                                            <div className="form-group">
+                                                <label htmlFor="name">Rating:</label>
+                                                <StarRatings setStar= {setStar} />
+                                            </div>
                                         </div>
                                         <button onClick={() => close()}>Submit</button>
                                     </form>
