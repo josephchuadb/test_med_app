@@ -42,7 +42,7 @@ const ReviewForm = ({onSubmit}) => {
                         </div>
                     <div className="list">
                         <h1>
-                            <Popup trigger={<button className="btn" disabled >Click Here</button>} 
+                            <Popup trigger={<button className="btn">Click Here</button>} 
                             modal nested>
                             {close => (
                                 <div className='modal'>
@@ -84,7 +84,7 @@ const ReviewForm = ({onSubmit}) => {
                         </h1>
                     </div>
                     <div className="list">
-                        <h1 className="list__top">Reviewed</h1>
+                        <h1 className="list__top"></h1>
                     </div>
                     <div className="list">
                         <h1 className="list__top">2</h1>
