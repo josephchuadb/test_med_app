@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importing the Link component from react-router-dom library
 import './Navbar.css';
+import ProfileCard from '../ProfileCard/ProfileCard';
 
 // Function component for the main App
 const Navbar = () => {
@@ -77,6 +78,9 @@ const Navbar = () => {
                 </li>
                 <li className="link">
                     <Link to="/ReviewForm/ReviewForm">Reviews</Link>
+                </li>
+                <li className="link">
+                    <ProfileCard />
                 </li>
                 {isLoggedIn? (
                     <>
