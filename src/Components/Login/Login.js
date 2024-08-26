@@ -39,23 +39,26 @@ const Login = () => {
 
     // Parse the response JSON
     const json = await res.json();
-    if (json.authtoken) {
-      // If authentication token is received, store it in session storage
-      sessionStorage.setItem('auth-token', json.authtoken);
-      sessionStorage.setItem('email', email);
 
-      // Redirect to home page and reload the window
-      navigate('/');
-      window.location.reload();
-    } else {
-      // Handle errors if authentication fails
-      if (json.errors) {
-        for (const error of json.errors) {
-          alert(error.msg);
-        }
+    try {
+      if (json.authtoken) {
+        // If authentication token is received, store it in session storage
+        sessionStorage.setItem('auth-token', json.authtoken);
+        sessionStorage.setItem('email', email);
+
+        // Redirect to home page and reload the window
+        navigate('/');
+        window.location.reload();
+      } else if (json.errors) {
+        // Handle errors if authentication fails
+          for (const error of json.errors) {
+            alert(error.msg);
+          }
       } else {
-        alert(json.error);
-      }
+          alert(json.error);
+        }
+    } catch (error) {
+      console.log('Error parsing LOGIN-JSON:', error, json);
     }
   };
 

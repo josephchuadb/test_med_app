@@ -30,24 +30,26 @@ const SignUp = () => {
             }),
         });
         const json = await response.json(); // Parse the response JSON
-        if (json.authtoken) {
-            // Store user data in session storage
-            sessionStorage.setItem("auth-token", json.authtoken);
-            sessionStorage.setItem("name", name);
-            sessionStorage.setItem("phone", phone);
-            sessionStorage.setItem("email", email);
-
-            // Redirect user to home page
-            navigate("/");
-            window.location.reload(); // Refresh the page
-        } else {
-            if (json.errors) {
+        try {
+            if (json.authtoken) {
+                // Store user data in session storage
+                sessionStorage.setItem("auth-token", json.authtoken);
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("phone", phone);
+                sessionStorage.setItem("email", email);
+    
+                // Redirect user to home page
+                navigate("/");
+                window.location.reload(); // Refresh the page
+            } else if (json.errors) {
                 for (const error of json.errors) {
                     setShowerr(error.msg); // Show error messages
-                }
+                } 
             } else {
                 setShowerr(json.error);
             }
+        } catch (error) {
+            console.log('Error parsing SIGNUP-JSON:', error, json);
         }
     };
 
