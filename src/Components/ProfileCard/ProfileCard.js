@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-// import './ProfileCard.css'
-import { Link, useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import ProfileForm from '../ProfileForm/ProfileForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+//import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import './ProfileCard.css'
+import { Link, useNavigate } from 'react-router-dom';
+import ProfileForm from '../ProfileForm/ProfileForm';
 
 // Defining the Function component ProfileCard
 const ProfileCard = () => {
     return (
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </DropdownButton>
-    );
+          <Dropdown>
+            <Dropdown.Toggle variant="success" style={{ color: 'black', fontWeight: 500, backgroundColor: 'white' }}>
+              Welcome, Joseph
+            </Dropdown.Toggle>
+            <Dropdown.Menu style={{ marginTop: -2 }}>
+              <Dropdown.Item href="#" style={{ display: 'block', 
+                  width: 200, textAlign: 'center', padding: 0 }}>
+                Your Profile
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+      );
 };
 
 export default ProfileCard;

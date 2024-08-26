@@ -82,6 +82,12 @@ const Navbar = () => {
                 <li className="link">
                     <ProfileCard />
                 </li>
+                <li className="link">
+                    <button className="btn2" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </li>
+                {/*  
                 {isLoggedIn? (
                     <>
                         <li className="link">
@@ -104,6 +110,7 @@ const Navbar = () => {
                         </li>
                     </>
                 )}
+                */}
                 </ul>
             </nav>
         </div>
