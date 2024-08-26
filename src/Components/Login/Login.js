@@ -1,5 +1,5 @@
-// Following code has been commented with appropriate comments for your reference.
 import React, { useState, useEffect } from 'react';
+
 // Apply CSS according to your design theme or the CSS provided in week 2 lab 2
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
@@ -10,17 +10,21 @@ const Login = () => {
     // State variables for email and password
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');
+
   // Get navigation function from react-router-dom
   const navigate = useNavigate();
+
   // Check if user is already authenticated, then redirect to home page
   useEffect(() => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/");
     }
   }, []);
+
   // Function to handle login form submission
   const login = async (e) => {
     e.preventDefault();
+
     // Send a POST request to the login API endpoint
     const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
@@ -29,15 +33,17 @@ const Login = () => {
       },
       body: JSON.stringify({
         email: email,
-        password: password,
+        password: password
       }),
     });
+
     // Parse the response JSON
     const json = await res.json();
     if (json.authtoken) {
       // If authentication token is received, store it in session storage
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', email);
+
       // Redirect to home page and reload the window
       navigate('/');
       window.location.reload();
@@ -60,14 +66,11 @@ const Login = () => {
                     <h2>Login</h2>
                 </div>
                 <div className="login-text">
-                    Are you a new member?
-                    <span>
-                        <Link to="/Sign_Up/Sign_Up" style={{color: "#2190FF"}}>Sign Up Here</Link>
-                    </span>
+                  Are you a new member?<span><Link to="/Sign_Up/Sign_Up" style={{color: "#2190FF"}}> Sign Up Here</Link></span>
                 </div>
                 <br />
                 <div className="login-form">
-                    <form>
+                    <form onSubmit={login}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input 

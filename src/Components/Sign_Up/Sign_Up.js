@@ -36,6 +36,7 @@ const SignUp = () => {
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
+
             // Redirect user to home page
             navigate("/");
             window.location.reload(); // Refresh the page
@@ -57,11 +58,7 @@ const SignUp = () => {
                 <h1>Sign Up</h1>
             </div>
             <div className="signup-text1" style={{textAlign: "left"}}>
-                Already a member? 
-                <span>
-                    <Link to="/Login/Login" style={{color: "#2190FF"}}> Login
-                    </Link>
-                </span>
+                Already a member?<span><Link to="/Login/Login" style={{color: "#2190FF"}}> Login</Link></span>
             </div>
             <div className="signup-form">
                 <form method="POST" onSubmit={register}>
@@ -88,8 +85,16 @@ const SignUp = () => {
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
-                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                        <input 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        type="email"
+                        name="email"
+                        id="email"
+                        className="form-control"
+                        placeholder="Enter your email"
+                        aria-describedby="helpId" />
+                        {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                     </div>
 
                     <div className="form-group">

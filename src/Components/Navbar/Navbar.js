@@ -5,10 +5,9 @@ import './Navbar.css';
 // Function component for the main App
 const Navbar = () => {
     const [click, setClick] = useState(false);
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
-    const[email,setEmail]=useState("");
+    const[email,setEmail]= useState("");
     const [showDropdown, setShowDropdown] = useState(false);
     const handleClick = () => setClick(!click);
 
@@ -35,14 +34,15 @@ const Navbar = () => {
     const handleDropdown = () => {
       setShowDropdown(!showDropdown);
     }
-    useEffect(() => { 
-      const storedemail = sessionStorage.getItem("email");
 
-      if (storedemail) {
+    useEffect(() => { 
+        const storedemail = sessionStorage.getItem("email");
+
+        if (storedemail) {
             setIsLoggedIn(true);
             setUsername(storedemail);
-          }
-        }, []);
+        }
+    }, []);
 
     return (
         <div>
@@ -76,32 +76,29 @@ const Navbar = () => {
                     <Link to="/BookingConsultation">Appointments</Link>
                 </li>
                 <li className="link">
-                    {/*  <Link to="/FindDoctorSearch/FindDoctorSearch">Appointments</Link> */}
                     <Link to="/ReviewForm/ReviewForm">Reviews</Link>
                 </li>
-                {isLoggedIn?(
-                <>
-                <li className="link">
-                <Link to="/"></Link>
-                Welcome, {username}
-                <button className="btn2" onClick={handleLogout}>
-                    Logout
-                </button>
-                </li>
-                </>
+                {isLoggedIn? (
+                    <>
+                        <li className="link">
+                            <button className="btn2" onClick={handleLogout}>
+                                Logout
+                            </button>
+                        </li>
+                    </>
                 ) : (
-                <>
-                <li className="link">
-                <Link to="/Sign_Up/Sign_Up">
-                    <button className="btn1">Sign Up</button>
-                </Link>
-                </li>
-                <li className="link">
-                <Link to="/Login/Login">
-                    <button className="btn1">Login</button>
-                </Link>
-                </li>
-                </>
+                    <>
+                        <li className="link">
+                            <Link to="/signup">
+                                <button className="btn1">Sign Up</button>
+                            </Link>
+                            </li>
+                            <li className="link">
+                            <Link to="/login">
+                                <button className="btn1">Login</button>
+                            </Link>
+                        </li>
+                    </>
                 )}
                 </ul>
             </nav>
