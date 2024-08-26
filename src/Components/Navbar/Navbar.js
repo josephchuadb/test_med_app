@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importing the Link component from react-router-dom library
 import './Navbar.css';
 import ProfileCard from '../ProfileCard/ProfileCard';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // Function component for the main App
 const Navbar = () => {
@@ -77,9 +78,9 @@ const Navbar = () => {
                     <Link to="/BookingConsultation">Appointments</Link>
                 </li>
                 <li className="link">
-                    <Link to="/ReviewForm/ReviewForm">Reviews</Link>
+                     <Link to="/ReviewForm/ReviewForm">Reviews</Link>
                 </li>
-                {/*
+                
                 <li className="link">
                     <ProfileCard />
                 </li>
@@ -88,8 +89,8 @@ const Navbar = () => {
                         Logout
                     </button>
                 </li>
-                */}
                 
+                {/*
                 {isLoggedIn? (
                     <>
                         <li className="link">
@@ -112,7 +113,7 @@ const Navbar = () => {
                         </li>
                     </>
                 )}
-                
+                */}
                 </ul>
             </nav>
         </div>

@@ -18,7 +18,7 @@ const ProfileForm = () => {
   useEffect(() => {
     const authtoken = sessionStorage.getItem("auth-token");
     if (!authtoken) {
-      navigate("/login");
+      navigate("/ProfileForm/ProfileForm");
     } else {
       fetchUserProfile();
     }
@@ -31,7 +31,7 @@ const ProfileForm = () => {
       const email = sessionStorage.getItem("email"); // Get the email from session storage
 
       if (!authtoken) {
-        navigate("/login");
+        navigate("/ProfileForm/ProfileForm");
       } else {
         const response = await fetch(`${API_URL}/api/auth/user`, {
           headers: {
@@ -76,7 +76,7 @@ const ProfileForm = () => {
       const email = sessionStorage.getItem("email"); // Get the email from session storage
 
       if (!authtoken || !email) {
-        navigate("/login");
+        navigate("/");
         return;
       }
 
@@ -116,15 +116,6 @@ const ProfileForm = () => {
     <div className="profile-container">
       {editMode ? (
         <form onSubmit={handleSubmit}>
-            <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={userDetails.email}
-              disabled // Disable the email field
-            />
-            </label>
             {/* Create similar logic for displaying and editing name and phone from userDetails */}
             <label>
             Name
@@ -144,14 +135,24 @@ const ProfileForm = () => {
                 onChange={handleInputChange}
                 />
             </label>
+            <label>
+            Email
+            <input
+              type="email"
+              name="email"
+              value={userDetails.email}
+            />
+            </label>
           <button type="submit">Save</button>
         </form>
       ) : (
         <div className="profile-details">
-            <h1>Welcome, {userDetails.name}</h1>
-            {/* Implement code to display and allow editing of phone and email similar to above */}
+            <h2>Welcome, Joseph</h2>
+            {/* Implement code to display and allow editing of phone and email similar to above 
             <p><b>Email:</b> {userDetails.email}</p>
-            <p><b>Phone:</b> {userDetails.phone}</p>
+            <p><b>Phone:</b> {userDetails.phone}</p> */}
+            <p><b>Email:</b> joseph@example.com</p>
+            <p><b>Phone:</b> 1234567890</p>
             <button onClick={handleEdit}>Edit</button>
         </div>
       )}
