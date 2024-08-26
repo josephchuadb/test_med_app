@@ -1,0 +1,68 @@
+/* Styles for the container element */
+.container {
+    max-width: 900px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Add padding inside the container */
+    margin-top: 10%; /* Set top margin as a percentage of the viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Styles for the main signup text */
+.reports-text {
+    margin-top: 30px; /* Add top margin */
+    grid-column: 1 / 4; /* Span across all three columns */
+    text-align: center; /* Center-align text */
+}
+
+/* Styles for buttons in the signup form */
+.btn {
+    margin:0px;
+    padding: 10px 20px; /* Set padding for buttons */
+    font-size: 16px; /* Set font size for buttons */
+    border: none; /* Remove button borders */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.btn--view {
+    width: 120px;
+}
+
+.btn--download {
+    width: 160px;
+}
+
+/* Styles for the grid layout of the signup form */
+.reports__gridtitle {
+    display: grid;
+    background-color: lightgray;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.reports__gridlist {
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(5, 1fr);
+}
+  
+.reports__col {
+    height: 50px;
+    font-size: 8px;
+    border-bottom: 1px solid gray;
+}
+
+.reports__list {
+    height: 100px;
+    font-size: 8px;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+}
+
+.reports__top {
+    margin-top: 35px;
+}
+
+.reports__content {
+    font-weight: 300;
+    text-align: center;
+}
