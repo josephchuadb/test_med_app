@@ -1,6 +1,5 @@
 // Import necessary modules from React library
 import React from 'react';
-// import React, { useEffect } from 'react';
 
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,13 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Import custom Navbar component
 import LandingPage from './Components/Landing_Page/Landing_Page';
 import Navbar from './Components/Navbar/Navbar';
-// import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import Login from './Components/Login/Login';
 import SignUp from './Components/Sign_Up/Sign_Up';
 import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import ProfileForm from './Components/ProfileForm/ProfileForm';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 import './App.css';
 
 // Function component for the main App
@@ -35,6 +34,7 @@ function App() {
                 <Route path="/Notification/Notification" element={<Notification/>}/>
                 <Route path="/ReviewForm/ReviewForm" element={<ReviewForm/>}/>
                 <Route path="/ProfileForm/ProfileForm" element={<ProfileForm/>}/>
+                <Route path="/ReportsLayout/ReportsLayout" element={<ReportsLayout/>}/>
             </Routes>
             </Notification>
         </BrowserRouter>

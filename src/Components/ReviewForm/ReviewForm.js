@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import './ReviewForm.css';
-// import { Link, useNavigate } from 'react-router-dom';
-// import { API_URL } from '../../config';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-import { FaStar } from 'react-icons/fa';
 import StarRatings from '../StarRatings/StarRatings';
+import 'reactjs-popup/dist/index.css';
+import './ReviewForm.css';
 
 const ReviewForm = ({onSubmit}) => {
     const [name, setName] = useState('');
@@ -76,7 +73,7 @@ const ReviewForm = ({onSubmit}) => {
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="name">Rating:</label>
-                                            <StarRatings setStar= {setStar} />
+                                            <StarRatings setStar={setStar} />
                                         </div>
                                         <button onClick={() => close()}>Submit</button>
                                         <div>{value}</div>

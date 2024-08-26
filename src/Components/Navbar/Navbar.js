@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importing the Link component from react-router-dom library
 import './Navbar.css';
 import ProfileCard from '../ProfileCard/ProfileCard';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // Function component for the main App
 const Navbar = () => {
@@ -80,7 +82,6 @@ const Navbar = () => {
                 <li className="link">
                      <Link to="/ReviewForm/ReviewForm">Reviews</Link>
                 </li>
-                
                 <li className="link">
                     <ProfileCard />
                 </li>

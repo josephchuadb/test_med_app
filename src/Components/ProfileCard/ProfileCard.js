@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-// import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './ProfileCard.css'
-import { Link, useNavigate } from 'react-router-dom';
-import ProfileForm from '../ProfileForm/ProfileForm';
 
 // Defining the Function component ProfileCard
 const ProfileCard = () => {
@@ -16,6 +13,10 @@ const ProfileCard = () => {
               <Dropdown.Item href="/ProfileForm/ProfileForm" style={{ display: 'block', 
                   width: 200, textAlign: 'center', padding: 0 }}>
                 Your Profile
+              </Dropdown.Item>
+              <Dropdown.Item href="/ReportsLayout/ReportsLayout" style={{ display: 'block', 
+                  width: 200, textAlign: 'center', padding: 0 }}>
+                Your Reports
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
